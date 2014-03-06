@@ -9,6 +9,7 @@ function deviceready() {
 	console.log('deviceready');
 
 	//create a new instance of our Diary and listen for it to complete it's setup
+	alert("test");
 	diary = new Diary();
 
 	if(device.platform === "iOS") {
