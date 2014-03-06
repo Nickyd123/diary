@@ -1,6 +1,5 @@
 function Diary() {
 	that = this;
-	alert("diary test");
 }
 
 Diary.prototype.setup = function(callback) {
@@ -11,18 +10,18 @@ Diary.prototype.setup = function(callback) {
 	this.db.transaction(this.initDB, this.dbErrorHandler, callback);
 	alert("database test");
 
-}
+};
 
 //Geenric database error handler. Won't do anything for now.
 Diary.prototype.dbErrorHandler = function(e) {
 	console.log('DB Error');
 	console.dir(e);
-}
+};
 
 //I initialize the database structure
 Diary.prototype.initDB = function(t) {
 	t.executeSql('create table if not exists diary(id INTEGER PRIMARY KEY AUTOINCREMENT, title TEXT, body TEXT, image TEXT, published DATE)');
-}
+};
 
 Diary.prototype.getEntries = function(start,callback) {
 	console.log('Running getEntries');
@@ -36,7 +35,7 @@ Diary.prototype.getEntries = function(start,callback) {
 				},this.dbErrorHandler);
 		}, this.dbErrorHandler);
 
-}
+};
 
 Diary.prototype.getEntry = function(id, callback) {
 
@@ -48,7 +47,7 @@ Diary.prototype.getEntry = function(id, callback) {
 				}, this.dbErrorHandler);
 			}, this.dbErrorHandler);
 
-}
+};
 
 //No support for edits yet
 Diary.prototype.saveEntry = function(data, callback) {
@@ -59,7 +58,7 @@ Diary.prototype.saveEntry = function(data, callback) {
 				callback();
 			}, this.dbErrorHandler);
 		}, this.dbErrorHandler);
-}
+};
 
 //Utility to convert record sets into array of obs
 Diary.prototype.fixResults = function(res) {
@@ -69,11 +68,11 @@ Diary.prototype.fixResults = function(res) {
 		result.push(row);
 	}
 	return result;
-}
+};
 
 //I'm a lot like fixResults, but I'm only used in the context of expecting one row, so I return an ob, not an array
 Diary.prototype.fixResult = function(res) {
 	if(res.rows.length) {
 		return res.rows.item(0);
 	} else return {};
-}
+};
