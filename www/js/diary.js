@@ -7,6 +7,7 @@ Diary.prototype.setup = function(callback) {
 	//First, setup the database
 	this.db = window.openDatabase("diary", 1, "diary", 1000000);
 	this.db.transaction(this.initDB, this.dbErrorHandler, callback);
+	alert("database test");
 
 }
 
