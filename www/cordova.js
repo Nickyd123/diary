@@ -24,8 +24,7 @@
 */
 
 ;(function() {
-	alert("test");
-
+	
 // file: lib/scripts/require.js
 
 var require,

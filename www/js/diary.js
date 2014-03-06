@@ -11,7 +11,7 @@ Diary.prototype.setup = function(callback) {
 	alert("database test");
 
 };
-
+alert("test");
 //Geenric database error handler. Won't do anything for now.
 Diary.prototype.dbErrorHandler = function(e) {
 	console.log('DB Error');
