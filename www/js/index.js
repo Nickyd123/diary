@@ -20,6 +20,7 @@ function deviceready() {
 		}, 
 		null);
 	} else {
+		alert("test");
 		diary.setup(startApp);
 	}
 }
